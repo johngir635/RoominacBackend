@@ -162,6 +162,7 @@ namespace RoominacBackend.Models
         [Display(Name = "Description")]
         public string RatingDescription { get; set; }
 
+
         public virtual PropertyDetail PropertyDetail { get; set; }
 
         public virtual RoominacUsers RoominacUsers { get; set; }

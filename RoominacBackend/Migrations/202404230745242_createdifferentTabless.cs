@@ -8,19 +8,19 @@
         public override void Up()
         {
             CreateTable(
-                "dbo.Bookings",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Instantbooking = c.Boolean(nullable: false),
-                        SelfCheckIn = c.Boolean(nullable: false),
-                        FreeCancelation = c.Boolean(nullable: false),
-                        PropertyItemId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.PropertyItems", t => t.PropertyItemId, cascadeDelete: true)
-                .Index(t => t.PropertyItemId);
-            
+                   "dbo.Bookings",
+                   c => new
+                   {
+                       Id = c.Int(nullable: false, identity: true),
+                       Instantbooking = c.Boolean(nullable: false),
+                       SelfCheckIn = c.Boolean(nullable: false),
+                       FreeCancelation = c.Boolean(nullable: false),
+                       PropertyItemId = c.Int(nullable: false),
+                   })
+                   .PrimaryKey(t => t.Id)
+                   .ForeignKey("dbo.PropertyDetails", t => t.PropertyItemId, cascadeDelete: true)
+                   .Index(t => t.PropertyItemId);
+
             CreateTable(
                 "dbo.PropertyItems",
                 c => new
@@ -31,7 +31,20 @@
                         Value = c.Binary(),
                     })
                 .PrimaryKey(t => t.Id);
-            
+            CreateTable(
+            "dbo.Stays",
+            c => new
+            {
+                Id = c.Int(nullable: false, identity: true),
+                When = c.DateTime(nullable: false),
+                NoOfGuset = c.Int(nullable: false),
+                RoominacUserId = c.Int(nullable: false),
+                ExactDaysPlusMinus = c.Int(nullable: false),
+                PropertyItemId = c.Int(nullable: false),
+            })
+            .PrimaryKey(t => t.Id)
+            .ForeignKey("dbo.PropertyDetails", t => t.PropertyItemId, cascadeDelete: true)
+            .Index(t => t.PropertyItemId);
             CreateTable(
                 "dbo.Messages",
                 c => new
@@ -224,22 +237,7 @@
                 .ForeignKey("dbo.PropertyDetails", t => t.PropertyDetailId)
                 .Index(t => t.PropertyDetailId);
             
-            CreateTable(
-                "dbo.Stays",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        When = c.DateTime(nullable: false),
-                        NoOfGuset = c.Int(nullable: false),
-                        RoominacUserId = c.Int(nullable: false),
-                        ExactDaysPlusMinus = c.Int(nullable: false),
-                        PropertyItemId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.PropertyItems", t => t.PropertyItemId, cascadeDelete: true)
-                .ForeignKey("dbo.RoominacUsers", t => t.RoominacUserId, cascadeDelete: true)
-                .Index(t => t.RoominacUserId)
-                .Index(t => t.PropertyItemId);
+            
             
             CreateTable(
                 "dbo.TopTierStays",
@@ -315,6 +313,12 @@
             DropTable("dbo.Notifications");
             DropTable("dbo.Messages");
             DropTable("dbo.PropertyItems");
+            DropTable("dbo.Bookings");
+            DropForeignKey("dbo.Stays", "PropertyItemId", "dbo.PropertyDetails");
+            DropIndex("dbo.Stays", new[] { "PropertyItemId" });
+            DropTable("dbo.Stays");
+            DropForeignKey("dbo.Bookings", "PropertyItemId", "dbo.PropertyDetails");
+            DropIndex("dbo.Bookings", new[] { "PropertyItemId" });
             DropTable("dbo.Bookings");
         }
     }

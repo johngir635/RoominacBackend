@@ -69,7 +69,7 @@ namespace RoominacBackend.Models
         public int Nights { get; set; }
         [Display(Name = "Property Type")]
         public PropertyType PropertyType { get; set; } // Add property type enum
-                                                       // Navigation property for RoominacUsers
+        public string CancellationPolicy { get; set; }                     // Navigation property for RoominacUsers
         public RoominacUsers RoominacUsers { get; set; }
         // Navigation property for Rating collection     
     }

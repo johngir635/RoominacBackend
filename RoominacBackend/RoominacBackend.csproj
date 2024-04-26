@@ -288,43 +288,50 @@
     <Compile Include="Migrations\202404230745242_createdifferentTabless.Designer.cs">
       <DependentUpon>202404230745242_createdifferentTabless.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202404231529307_createtablestaysagain.cs" />
-    <Compile Include="Migrations\202404231529307_createtablestaysagain.Designer.cs">
-      <DependentUpon>202404231529307_createtablestaysagain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202404231544010_droptablebook.cs" />
-    <Compile Include="Migrations\202404231544010_droptablebook.Designer.cs">
-      <DependentUpon>202404231544010_droptablebook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202404231545090_createtablebookagain.cs" />
-    <Compile Include="Migrations\202404231545090_createtablebookagain.Designer.cs">
-      <DependentUpon>202404231545090_createtablebookagain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202404240617155_updatetopropertydeatilrating.cs" />
     <Compile Include="Migrations\202404240617155_updatetopropertydeatilrating.Designer.cs">
       <DependentUpon>202404240617155_updatetopropertydeatilrating.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404250914130_AddReview.cs" />
+    <Compile Include="Migrations\202404250914130_AddReview.Designer.cs">
+      <DependentUpon>202404250914130_AddReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404251158454_updatereviewclass.cs" />
+    <Compile Include="Migrations\202404251158454_updatereviewclass.Designer.cs">
+      <DependentUpon>202404251158454_updatereviewclass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404261114504_houserulestable.cs" />
+    <Compile Include="Migrations\202404261114504_houserulestable.Designer.cs">
+      <DependentUpon>202404261114504_houserulestable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\HostsUsercs.cs" />
+    <Compile Include="Models\HouseRules.cs" />
     <Compile Include="Models\MessageAndNotification.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PropertyDetail.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="Models\RoominacUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestModels\BookingDto.cs" />
+    <Compile Include="RequestModels\CancellationPolicyDto.cs" />
     <Compile Include="RequestModels\CreatePropertyDeatail.cs" />
     <Compile Include="RequestModels\HostUserDto.cs" />
+    <Compile Include="RequestModels\HouseRulesDto.cs" />
     <Compile Include="RequestModels\Messagedto.cs" />
     <Compile Include="RequestModels\Notificationdto.cs" />
     <Compile Include="RequestModels\PaymentHistoryDto.cs" />
     <Compile Include="RequestModels\PaymentMethodDto.cs" />
+    <Compile Include="RequestModels\PriceDetailsRequestModel.cs" />
     <Compile Include="RequestModels\PropertyImage.cs" />
     <Compile Include="RequestModels\ReportedSuperHostProfileDTO.cs" />
+    <Compile Include="RequestModels\ReviewDto.cs" />
     <Compile Include="RequestModels\staysdto.cs" />
     <Compile Include="RequestModels\ToptiesStayDto.cs" />
     <Compile Include="RequestModels\WishListdto.cs" />
+    <Compile Include="ResponseDto\PriceDetailsResponseDTO.cs" />
     <Compile Include="ResponseDto\PropertyDetialsDTO.cs" />
     <Compile Include="ResponseDto\PropertyItemFilterDTO.cs" />
     <Compile Include="ResponseDto\PropertyItems.cs" />
@@ -352,17 +359,17 @@
     <EmbeddedResource Include="Migrations\202404230745242_createdifferentTabless.resx">
       <DependentUpon>202404230745242_createdifferentTabless.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202404231529307_createtablestaysagain.resx">
-      <DependentUpon>202404231529307_createtablestaysagain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202404231544010_droptablebook.resx">
-      <DependentUpon>202404231544010_droptablebook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202404231545090_createtablebookagain.resx">
-      <DependentUpon>202404231545090_createtablebookagain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404240617155_updatetopropertydeatilrating.resx">
       <DependentUpon>202404240617155_updatetopropertydeatilrating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404250914130_AddReview.resx">
+      <DependentUpon>202404250914130_AddReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404251158454_updatereviewclass.resx">
+      <DependentUpon>202404251158454_updatereviewclass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404261114504_houserulestable.resx">
+      <DependentUpon>202404261114504_houserulestable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

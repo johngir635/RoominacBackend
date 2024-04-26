@@ -45,5 +45,10 @@ namespace RoominacBackend.Models
         public DbSet<ReportedSuperHostProfile> ReportedSuperHostProfile { get; set; }
         public DbSet<SuperHost> SuperHost { get; set; }
         public DbSet<TopTierStays> TopTierStays { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<HouseRules> HouseRules { get; set; }
+
+
     }
 }
